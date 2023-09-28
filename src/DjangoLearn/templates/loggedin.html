@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Logged In</title>
+</head>
+<body>
+    <div class = "">
+    <h1 class = "">{{user.username}}</h1>
+    <h1 class = "">You are {% if user_type == 'teacher' %}a teacher {% else %}a student{% endif %}</h1>
+   <div class = "">
+    <a class = "" href="/logout">
+        Logout
+    </a>
+    <a class = "" href="/courses">
+        Courses
+    </a>
+</div>
+</div>
+</body>
+</html>

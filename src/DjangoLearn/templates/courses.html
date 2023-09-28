@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Courses</title>
+</head>
+<body>
+    
+<div>
+    <h1 class = "">Courses</h1>
+    {% if user.type == 'teacher' %}
+    <button>
+    <a href="/course_form" class = "">ADD</a>
+</button>
+    {% endif %}
+    <div class = "">
+        {% for course in courses %}
+        <div class = "">
+            <div class = "">
+                <div class = "">
+                    <h2 class = "">{{ course.name }}</h2>
+                    <p class = "">{{ course.description }}</p>
+                </div>
+                <div class = "">
+                    <button >
+                   <a href = "/delete_course/{{course.name}}" class = "">DELETE</a>
+                </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</body>
