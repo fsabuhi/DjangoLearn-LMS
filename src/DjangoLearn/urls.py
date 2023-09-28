@@ -17,14 +17,20 @@ Including another URLconf
 from django.contrib import admin
 from django.http import HttpResponse,HttpResponseRedirect
 from django.urls import path
+from . import course_functions
 from . import views
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('login/', views.login, name='login'),
-    path('register/', views.register, name='register'),
-    path('registration', views.registration, name='registration'),
-    path('index/', views.index, name='Home'),
     path('', views.index, name='Home'),
+    path('index/', views.index, name='Home'),
+    path('admin/', admin.site.urls),
+    path('login/', views.login_page, name='login'),
+    path('register/', views.register, name='register'),
+    path('authenticate',views.auth),
+    path('registration', views.registration, name='registration'),
     path('logout/',views.logout_user),
-    path('authenticate',views.auth)
+    path('courses/',views.courses),
+    path('add_course',course_functions.add_course),
+    path('course_form/',views.course_form),
+    path('delete_course/<str:name>',course_functions.delete_course),
+    
 ]
